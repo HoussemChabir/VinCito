@@ -1,0 +1,5 @@
+{
+  "name": "VinCito",
+  "description": "A tool to help you speed-read by showing only the top half of each line of text. Paste or upload text, adjust the visible portion with a slider, and toggle between half and full view to train your reading skills.",
+  "requestFramePermissions": []
+}
