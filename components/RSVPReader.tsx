@@ -36,31 +36,31 @@ const RSVPReader: React.FC<RSVPReaderProps> = ({ words, position, chunkSize, isP
 
 
   return (
-    <div className="bg-white p-4 rounded-2xl border-2 border-red-100 flex-grow w-full h-full flex flex-col items-center justify-center font-sans text-4xl sm:text-5xl md:text-6xl font-black select-none tracking-wider overflow-hidden">
-        
-        {/* Top Focus Indicator */}
-        <div className="w-px h-6 bg-red-500/70 mb-2"></div>
+    <div className="bg-white p-3 sm:p-4 rounded-xl sm:rounded-2xl border-2 border-red-100 flex-grow w-full h-full flex flex-col items-center justify-center font-sans text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black select-none tracking-wide sm:tracking-wider overflow-hidden touch-manipulation">
 
-        {/* Text Container - Centered by parent flexbox */}
-        <div 
-          className="text-gray-800 min-h-[1.5em] flex items-center justify-center"
-        >
-             {(!isPlaying && chunkWords.length === 0) ? (
-                <span className="text-gray-400 text-xl sm:text-2xl font-normal text-center">Press Play to start</span>
-            ) : middleWord ? (
-                <div className="whitespace-nowrap">
-                    {preMiddleWordsText && <span>{preMiddleWordsText} </span>}
-                    <span className="text-red-600">{middleWord}</span>
-                    {postMiddleWordsText && <span> {postMiddleWordsText}</span>}
-                </div>
-            ) : (
-                <div /> // Empty div to maintain height
-            )}
+        <div className="w-px h-4 sm:h-6 bg-red-500/70 mb-1.5 sm:mb-2"></div>
+
+        <div className="text-gray-800 min-h-[1.2em] sm:min-h-[1.5em] flex items-center justify-center px-2 max-w-full">
+          {(!isPlaying && chunkWords.length === 0) ? (
+            <span className="text-gray-400 text-base xs:text-lg sm:text-xl md:text-2xl font-normal text-center px-4">
+              Press Play to start
+            </span>
+          ) : middleWord ? (
+            <div className="flex items-center justify-center gap-1 sm:gap-2 flex-wrap max-w-full">
+              {preMiddleWordsText && (
+                <span className="text-gray-700">{preMiddleWordsText}</span>
+              )}
+              <span className="text-red-600 font-extrabold">{middleWord}</span>
+              {postMiddleWordsText && (
+                <span className="text-gray-700">{postMiddleWordsText}</span>
+              )}
+            </div>
+          ) : (
+            <div className="h-[1.2em]"></div>
+          )}
         </div>
-        
-        {/* Bottom Focus Indicator */}
-        <div className="w-px h-6 bg-red-500/70 mt-2"></div>
 
+        <div className="w-px h-4 sm:h-6 bg-red-500/70 mt-1.5 sm:mt-2"></div>
     </div>
   );
 };
